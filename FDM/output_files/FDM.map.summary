@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sun Nov 08 15:00:23 2020
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : FDM
+Top-level Entity Name : fdm
+Family : MAX 10
+Total logic elements : 61
+    Total combinational functions : 61
+    Dedicated logic registers : 18
+Total registers : 18
+Total pins : 97
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
