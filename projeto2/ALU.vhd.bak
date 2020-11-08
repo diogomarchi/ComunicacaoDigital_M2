@@ -1,0 +1,6 @@
+COMPONENT ALU IS
+		port ( 	 
+       i_A     : in  std_logic;  -- data sinal
+       o_SEL0  : out  std_logic; -- data selector output
+		 o_SEL1  : out  std_logic); -- data selector output
+   end component;
