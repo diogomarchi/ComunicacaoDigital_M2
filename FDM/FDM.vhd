@@ -4,20 +4,19 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.STD_LOGIC_UNSIGNED.ALL;
 
-ENTITY fdm IS
+ENTITY tdm IS
        PORT (
               i_CLK : IN std_logic; -- selector
 				  -- TEMPO MAXIMO PARA CADA CANAL
-              i_MAX_TIME : in std_logic_vector(15 DOWNTO 0); 
-				  
-				  i_A : IN std_logic_Vector(15 DOWNTO 0); -- data input
+              i_MAX_TIME : in std_logic_vector(15 DOWNTO 0); 				  
+	      i_A : IN std_logic_Vector(15 DOWNTO 0); -- data input
               i_B : IN std_logic_Vector(15 DOWNTO 0); -- data input
               i_C : IN std_logic_Vector(15 DOWNTO 0); -- data input
               i_D : IN std_logic_Vector(15 DOWNTO 0); -- data input
               o_Q : OUT std_logic_Vector(15 DOWNTO 0)); -- data output
-END fdm;
+END tdm;
 
-ARCHITECTURE arch_1 OF fdm IS
+ARCHITECTURE arch_1 OF tdm IS
        -- contador
        SIGNAL w_C : std_logic_vector(15 DOWNTO 0);
 		 
