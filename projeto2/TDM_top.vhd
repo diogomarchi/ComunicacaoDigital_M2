@@ -45,7 +45,7 @@ ARCHITECTURE rtl OF TDM_top IS
 		 o_Q : OUT std_logic_Vector(15 DOWNTO 0)); -- data output
 	END component;
 
-	COMPONENT ALU IS
+	COMPONENT comparador IS
 		port ( 	 
        i_A     : in  std_logic_vector(1 downto 0);  -- data sinal
        o_SEL0  : out  std_logic; -- data selector output
@@ -58,7 +58,6 @@ ARCHITECTURE rtl OF TDM_top IS
 	SIgNAL w_SINAL : std_logic_vector(1 downto 0);
 BEGIN
 
-	--connecting contador with ALU
 	u_contador : contador PORT MAP(
 		 i_PC_CLR => i_CLR_n,
 		 i_CLK    => i_CLK,
@@ -66,14 +65,13 @@ BEGIN
 		 o_SINAL  => w_SINAL
 	);
 
-	--connecting instruction_register with processador_unidade_controle	 
-	u_ALU : ALU PORT MAP(
+	
+	u_comparador : comparador PORT MAP(
 		 i_A     => w_SINAL,
        o_SEL0  => w_o_SEL0,
 		 o_SEL1  => w_o_SEL1
 	);
-
-	--connecting processador_bloco_controle with processador_unidade_controle									 
+	
 	u_mux4x1 :	mux4x1 PORT MAP(
 		 i_SEL0 => w_o_SEL0,
 		 i_SEL1 => w_o_SEL1,

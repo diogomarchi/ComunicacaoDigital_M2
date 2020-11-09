@@ -81,25 +81,27 @@ i_TIME[12] => contador:u_contador.i_TIME[12]
 i_TIME[13] => contador:u_contador.i_TIME[13]
 i_TIME[14] => contador:u_contador.i_TIME[14]
 i_TIME[15] => contador:u_contador.i_TIME[15]
-o_FRAME[0] <= mux4x1:u_mux4x1.o_Q[0]
-o_FRAME[1] <= mux4x1:u_mux4x1.o_Q[1]
-o_FRAME[2] <= mux4x1:u_mux4x1.o_Q[2]
-o_FRAME[3] <= mux4x1:u_mux4x1.o_Q[3]
-o_FRAME[4] <= mux4x1:u_mux4x1.o_Q[4]
-o_FRAME[5] <= mux4x1:u_mux4x1.o_Q[5]
-o_FRAME[6] <= mux4x1:u_mux4x1.o_Q[6]
-o_FRAME[7] <= mux4x1:u_mux4x1.o_Q[7]
-o_FRAME[8] <= mux4x1:u_mux4x1.o_Q[8]
-o_FRAME[9] <= mux4x1:u_mux4x1.o_Q[9]
-o_FRAME[10] <= mux4x1:u_mux4x1.o_Q[10]
-o_FRAME[11] <= mux4x1:u_mux4x1.o_Q[11]
-o_FRAME[12] <= mux4x1:u_mux4x1.o_Q[12]
-o_FRAME[13] <= mux4x1:u_mux4x1.o_Q[13]
-o_FRAME[14] <= mux4x1:u_mux4x1.o_Q[14]
-o_FRAME[15] <= mux4x1:u_mux4x1.o_Q[15]
+o_FRAME[0] << mux4x1:u_mux4x1.o_Q[0]
+o_FRAME[1] << mux4x1:u_mux4x1.o_Q[1]
+o_FRAME[2] << mux4x1:u_mux4x1.o_Q[2]
+o_FRAME[3] << mux4x1:u_mux4x1.o_Q[3]
+o_FRAME[4] << mux4x1:u_mux4x1.o_Q[4]
+o_FRAME[5] << mux4x1:u_mux4x1.o_Q[5]
+o_FRAME[6] << mux4x1:u_mux4x1.o_Q[6]
+o_FRAME[7] << mux4x1:u_mux4x1.o_Q[7]
+o_FRAME[8] << mux4x1:u_mux4x1.o_Q[8]
+o_FRAME[9] << mux4x1:u_mux4x1.o_Q[9]
+o_FRAME[10] << mux4x1:u_mux4x1.o_Q[10]
+o_FRAME[11] << mux4x1:u_mux4x1.o_Q[11]
+o_FRAME[12] << mux4x1:u_mux4x1.o_Q[12]
+o_FRAME[13] << mux4x1:u_mux4x1.o_Q[13]
+o_FRAME[14] << mux4x1:u_mux4x1.o_Q[14]
+o_FRAME[15] << mux4x1:u_mux4x1.o_Q[15]
 
 
 |TDM_top|contador:u_contador
+i_PC_CLR => w_SINAL[0].ACLR
+i_PC_CLR => w_SINAL[1].ACLR
 i_PC_CLR => w_COUNTER[0].ACLR
 i_PC_CLR => w_COUNTER[1].ACLR
 i_PC_CLR => w_COUNTER[2].ACLR
@@ -116,8 +118,6 @@ i_PC_CLR => w_COUNTER[12].ACLR
 i_PC_CLR => w_COUNTER[13].ACLR
 i_PC_CLR => w_COUNTER[14].ACLR
 i_PC_CLR => w_COUNTER[15].ACLR
-i_PC_CLR => w_SINAL[1].ENA
-i_PC_CLR => w_SINAL[0].ENA
 i_CLK => w_SINAL[0].CLK
 i_CLK => w_SINAL[1].CLK
 i_CLK => w_COUNTER[0].CLK
@@ -152,6 +152,22 @@ i_TIME[12] => LessThan0.IN4
 i_TIME[13] => LessThan0.IN3
 i_TIME[14] => LessThan0.IN2
 i_TIME[15] => LessThan0.IN1
+o_contador[0] <= w_COUNTER[0].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[1] <= w_COUNTER[1].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[2] <= w_COUNTER[2].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[3] <= w_COUNTER[3].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[4] <= w_COUNTER[4].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[5] <= w_COUNTER[5].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[6] <= w_COUNTER[6].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[7] <= w_COUNTER[7].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[8] <= w_COUNTER[8].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[9] <= w_COUNTER[9].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[10] <= w_COUNTER[10].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[11] <= w_COUNTER[11].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[12] <= w_COUNTER[12].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[13] <= w_COUNTER[13].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[14] <= w_COUNTER[14].DB_MAX_OUTPUT_PORT_TYPE
+o_contador[15] <= w_COUNTER[15].DB_MAX_OUTPUT_PORT_TYPE
 o_SINAL[0] <= w_SINAL[0].DB_MAX_OUTPUT_PORT_TYPE
 o_SINAL[1] <= w_SINAL[1].DB_MAX_OUTPUT_PORT_TYPE
 
