@@ -1,0 +1,207 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Diogo/Documents/FACULDADE-MATERIAS/comunicacao_digital/ComunicacaoDigital_M2/projeto2
+Ealu
+Z1 w1604883447
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8ALU.vhd
+Z7 FALU.vhd
+l0
+L5
+Vk`NzZD260Af:6Fzkm^d_@2
+!s100 THdf;jiHGNj7]c[bYTnjZ3
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1604885901
+!i10b 1
+Z10 !s108 1604885901.000000
+Z11 !s90 -reportprogress|300|ALU.vhd|TDM_tb.vhd|TDM_top.vhd|contador.vhd|mux4x1.vhd|projeto_2_top.vhd|
+Z12 !s107 projeto_2_top.vhd|mux4x1.vhd|contador.vhd|TDM_top.vhd|TDM_tb.vhd|ALU.vhd|
+!i113 1
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+Z14 DEx4 work 3 alu 0 22 k`NzZD260Af:6Fzkm^d_@2
+l12
+L11
+Z15 VFTR9hdSN9HGCP`C;[akWE1
+Z16 !s100 aYOCcDQ^@36@7JOAXB8nk3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Econtador
+Z17 w1604885871
+R2
+R3
+R4
+R5
+R0
+Z18 8contador.vhd
+Z19 Fcontador.vhd
+l0
+L13
+V0WEgo619LU6LOIPm`hSi[0
+!s100 eVC<=22DULSEjbCSC[=nH3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Artl
+R2
+R3
+R4
+R5
+Z20 DEx4 work 8 contador 0 22 0WEgo619LU6LOIPm`hSi[0
+l26
+L22
+VJmXYH3cGY1OT37[naWA]U0
+!s100 lWA5dkeCf=4XH;Wb7`>PB1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Emux4x1
+Z21 w1604860444
+R4
+R5
+R0
+Z22 8mux4x1.vhd
+Z23 Fmux4x1.vhd
+l0
+L11
+V9UATdVfZWNNodP]cQnFJF2
+!s100 E^NiC6eoKYeYaJijTh2W]1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Aarch_1
+R4
+R5
+Z24 DEx4 work 6 mux4x1 0 22 9UATdVfZWNNodP]cQnFJF2
+l24
+L22
+Z25 V?4z=WT9^Q?Hf]5X5A0Um=3
+Z26 !s100 37zB3UDfa8ziYlkLm9YSj0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Etdm_tb
+Z27 w1604884581
+R4
+R5
+R0
+Z28 8TDM_tb.vhd
+Z29 FTDM_tb.vhd
+l0
+L12
+VSWg0fn;ja0nUmdYngil`Z3
+!s100 [66^nJ?0;0h5_=K<Y3jRa0
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Aarch_1
+R4
+R5
+Z30 DEx4 work 6 tdm_tb 0 22 SWg0fn;ja0nUmdYngil`Z3
+l36
+L16
+Z31 Vo[;N:NP7]A8G7Wl;?J:1g0
+Z32 !s100 _<lJGWlLJ<0EfzZ<nEdC@3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Etdm_top
+Z33 w1604884858
+R2
+R3
+R4
+R5
+R0
+Z34 8projeto_2_top.vhd
+Z35 Fprojeto_2_top.vhd
+l0
+L13
+V3S9i]AoN`z_C;ZGROoJcb3
+!s100 Q<ZA3Iz9MBPIKM8cPV3Hl2
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+Artl
+R2
+R3
+R4
+R5
+Z36 DEx4 work 7 tdm_top 0 22 3S9i]AoN`z_C;ZGROoJcb3
+l60
+L26
+Z37 VHf3bdn`kKbXAhb[YYQXRa3
+Z38 !s100 @27F:jELL>mm_EUbFK5He1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13

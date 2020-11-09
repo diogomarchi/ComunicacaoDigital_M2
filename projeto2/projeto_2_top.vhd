@@ -18,7 +18,7 @@ ENTITY TDM_top IS
 		i_FRAME2 : IN std_logic_vector(15 DOWNTO 0); -- input fram2
 		i_FRAME3 : IN std_logic_vector(15 DOWNTO 0); -- input frame3
 		i_FRAME4 : IN std_logic_vector(15 DOWNTO 0); -- input frame4
-		i_TIME  : in std_logic_vector(7 downto 0);   -- input time divisor
+		i_TIME  : in std_logic_vector(15 downto 0);   -- input time divisor
 		o_FRAME : OUT std_logic_vector(15 DOWNTO 0)  -- output frame
 	);
 END TDM_top;
@@ -29,8 +29,9 @@ ARCHITECTURE rtl OF TDM_top IS
 	  PORT (
 		 i_PC_CLR : IN std_logic; -- clear/reset
 		 i_CLK    : IN std_logic; -- clock
-		 i_TIME   : IN std_logic_vector(7 downto 0); -- enable 	 
-		 o_SINAL  : out std_logic);
+		 i_TIME   : IN std_logic_vector(15 downto 0); -- enable 	
+                 o_contador: out std_logic_vector(15 downto 0); -- time divisor 	  
+		 o_SINAL  : out std_logic_vector(1 downto 0));
    END component;
 
 	COMPONENT mux4x1 IS
@@ -46,32 +47,31 @@ ARCHITECTURE rtl OF TDM_top IS
 
 	COMPONENT ALU IS
 		port ( 	 
-       i_A     : in  std_logic;  -- data sinal
-		 i_SEL0  : out  std_logic; -- data selector input
-		 i_SEL1  : out  std_logic; -- data selector input
-       o_SEL0  : out  std_logic; -- data selector output
+                 i_A     : in  std_logic_vector(1 downto 0);  -- data sinal
+                 o_SEL0  : out  std_logic; -- data selector output
 		 o_SEL1  : out  std_logic); -- data selector output
    end component;
 
 
 
-	SIGNAL w_SINAL, w_i_SEL0, w_i_SEL1, w_o_SEL0, w_o_SEL1 : std_logic;
+	SIGNAL w_o_SEL0, w_o_SEL1 : std_logic;
+	SIGNAL w_SINAL : std_logic_vector(1 downto 0);
+        SIGNAL w_contador : std_logic_vector(15 downto 0);
 BEGIN
 
 	--connecting contador with ALU
 	u_contador : contador PORT MAP(
 		 i_PC_CLR => i_CLR_n,
 		 i_CLK    => i_CLK,
-		 i_TIME   => i_TIME, 
+		 i_TIME   => i_TIME,
+                 o_contador => w_contador, 
 		 o_SINAL  => w_SINAL
 	);
 
 	--connecting instruction_register with processador_unidade_controle	 
 	u_ALU : ALU PORT MAP(
 		 i_A     => w_SINAL,
-		 i_SEL0  => w_i_SEL0,
-		 i_SEL1  => w_i_SEL1,
-       o_SEL0  => w_o_SEL0,
+                 o_SEL0  => w_o_SEL0,
 		 o_SEL1  => w_o_SEL1
 	);
 

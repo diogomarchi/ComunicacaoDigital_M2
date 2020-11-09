@@ -23,8 +23,8 @@ ARCHITECTURE arch_1 OF mux4x1 IS
        SIGNAL w_C : std_logic_vector(15 DOWNTO 0);
 BEGIN
        o_Q <= i_A WHEN (i_SEL0 = '0' AND i_SEL1 = '0') ELSE
-              i_B WHEN (i_SEL0 = '0' AND i_SEL1 = '1') ELSE
-              i_C WHEN (i_SEL0 = '1' AND i_SEL1 = '0') ELSE
+              i_B WHEN (i_SEL0 = '1' AND i_SEL1 = '0') ELSE
+              i_C WHEN (i_SEL0 = '0' AND i_SEL1 = '1') ELSE
               i_D;
 
 END arch_1;

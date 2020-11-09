@@ -13,7 +13,7 @@ entity TMR_tb is
 -- empty
 end TMR_tb; 
 
-architecture arch_1 of tb_TMR is
+architecture arch_1 of TMR_tb is
 
 -- DUT component
 component TMR is

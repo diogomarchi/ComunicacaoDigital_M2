@@ -8,34 +8,34 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Diogo/Documents/FACULDADE-MATERIAS/comunicacao_digital/ComunicacaoDigital_M2/projeto1
-Etb_tmr
-Z1 w1604862886
+Etmr
+Z1 w1604862231
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z4 8tmr_tb
-Z5 Ftmr_tb
+Z4 8TMR.vhd
+Z5 FTMR.vhd
 l0
-L12
-VUoRj=4IjOd]nl_zPzbO2Z1
-!s100 IFDWRiOIIe@:NMAOl`flR1
+L13
+Vg<aMC5:U[7;X=i<k89_^h2
+!s100 8coPhn_C_1U@lfXBmlRKi0
 Z6 OV;C;10.5b;63
 32
-Z7 !s110 1604862916
+Z7 !s110 1604881245
 !i10b 1
-Z8 !s108 1604862916.000000
-Z9 !s90 -reportprogress|300|tmr_tb|
-Z10 !s107 tmr_tb|
+Z8 !s108 1604881245.000000
+Z9 !s90 -reportprogress|300|TMR.vhd|
+Z10 !s107 TMR.vhd|
 !i113 1
 Z11 tExplicit 1 CvgOpt 0
 Aarch_1
 R2
 R3
-DEx4 work 6 tb_tmr 0 22 UoRj=4IjOd]nl_zPzbO2Z1
-l28
-L16
-V`J?iE3TYD;L=LFbU9lgLe2
-!s100 X9WA8XDWPJYBSbhlLWdmk0
+DEx4 work 3 tmr 0 22 g<aMC5:U[7;X=i<k89_^h2
+l24
+L22
+V?69^zA:kGm2JUdjQ`=JdV3
+!s100 JIF<c8TMA>e[?eYn[zaC83
 R6
 32
 R7
@@ -45,38 +45,38 @@ R9
 R10
 !i113 1
 R11
-Etmr
+Etmr_tb
+Z12 w1604881454
 R2
 R3
-32
-Z12 !s110 1604862728
-!i10b 1
-Z13 w1604862231
 R0
-Z14 8TMR.vhd
-Z15 FTMR.vhd
+Z13 8tmr_tb.vhd
+Z14 Ftmr_tb.vhd
 l0
-L13
-Vg<aMC5:U[7;X=i<k89_^h2
-!s100 8coPhn_C_1U@lfXBmlRKi0
+L12
+VliO>d4]bzTcmkfmhQk7A:0
+!s100 N]VZd9iTchc5HmWMcoEhi2
 R6
-Z16 !s108 1604862727.000000
-Z17 !s90 -reportprogress|300|TMR.vhd|
-Z18 !s107 TMR.vhd|
+32
+Z15 !s110 1604881464
+!i10b 1
+Z16 !s108 1604881464.000000
+Z17 !s90 -reportprogress|300|tmr_tb.vhd|
+Z18 !s107 tmr_tb.vhd|
 !i113 1
 R11
 Aarch_1
 R2
 R3
-DEx4 work 3 tmr 0 22 g<aMC5:U[7;X=i<k89_^h2
-32
-R12
-!i10b 1
-l24
-L22
-V?69^zA:kGm2JUdjQ`=JdV3
-!s100 JIF<c8TMA>e[?eYn[zaC83
+DEx4 work 6 tmr_tb 0 22 liO>d4]bzTcmkfmhQk7A:0
+l28
+L16
+V6:X5[5^:OGnNiBneOC10Y3
+!s100 ?9Xj06Q:iS_FeUgoSTUeL1
 R6
+32
+R15
+!i10b 1
 R16
 R17
 R18

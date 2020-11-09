@@ -9,9 +9,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
  
-entity TMR_tb is
+entity tb_TMR is
 -- empty
-end TMR_tb; 
+end tb_TMR; 
 
 architecture arch_1 of tb_TMR is
 
