@@ -19,7 +19,11 @@ ENTITY TDM_top IS
 		i_FRAME3 : IN std_logic_vector(15 DOWNTO 0); -- input frame3
 		i_FRAME4 : IN std_logic_vector(15 DOWNTO 0); -- input frame4
 		i_TIME  : in std_logic_vector(15 downto 0);   -- input time divisor
-		o_FRAME : OUT std_logic_vector(15 DOWNTO 0)  -- output frame
+		o_FRAME : OUT std_logic_vector(15 DOWNTO 0);  -- output frame
+		o_A : OUT std_logic;
+		o_B : OUT std_logic;
+		o_C : OUT std_logic;
+		o_D : OUT std_logic		
 	);
 END TDM_top;
 
@@ -27,59 +31,69 @@ ARCHITECTURE rtl OF TDM_top IS
 
 	COMPONENT contador IS
 	  PORT (
-		 i_PC_CLR : IN std_logic; -- clear/reset
-		 i_CLK    : IN std_logic; -- clock
-		 i_TIME   : IN std_logic_vector(15 downto 0); -- enable 	 
-		 o_SINAL  : out std_logic_vector(1 downto 0)
-		 );
+       i_CLR : IN std_logic; -- clear/reset
+       i_CLK : IN std_logic; -- clock    
+       o_contador: out std_logic_vector(15 downto 0) -- contador de clock
+	  );
    END component;
 
 	COMPONENT mux4x1 IS
 	  PORT (
-  	    i_SEL0 : IN std_logic; -- selector
-		 i_SEL1 : IN std_logic; -- selector
+  	    i_SEL : IN std_logic_vector(1 DOWNTO 0); -- selector		 
 		 i_A : IN std_logic_Vector(15 DOWNTO 0); -- data input
 		 i_B : IN std_logic_Vector(15 DOWNTO 0); -- data input
 		 i_C : IN std_logic_Vector(15 DOWNTO 0); -- data input
 		 i_D : IN std_logic_Vector(15 DOWNTO 0); -- data input
-		 o_Q : OUT std_logic_Vector(15 DOWNTO 0)); -- data output
+		 o_Q : OUT std_logic_Vector(15 DOWNTO 0); -- data output
+		 o_A : OUT std_logic;
+		 o_B : OUT std_logic;
+		 o_C : OUT std_logic;
+		 o_D : OUT std_logic);
 	END component;
 
 	COMPONENT comparador IS
-		port ( 	 
-       i_A     : in  std_logic_vector(1 downto 0);  -- data sinal
-       o_SEL0  : out  std_logic; -- data selector output
-		 o_SEL1  : out  std_logic); -- data selector output
+		port (
+       i_CLK       : in std_logic;
+       i_TEMPO_MAx : in  std_logic_vector(15 downto 0);  -- valor max
+       i_CONTADOR  : in  std_logic_vector(15 downto 0);  -- valor atual
+		 o_RESET_CNT : out std_logic; 
+		 o_SEL       : out std_logic_vector(1 downto 0));  -- data selector output       
    end component;
 
 
 
-	SIGNAL w_i_SEL0, w_i_SEL1, w_o_SEL0, w_o_SEL1 : std_logic;
-	SIgNAL w_SINAL : std_logic_vector(1 downto 0);
+	SIGNAL w_i_sel : std_logic_vector(1 downto 0);
+	SIGNAL w_contador : std_logic_vector(15 downto 0);	
+	SIGNAL w_reset : std_logic;
+	
 BEGIN
 
 	u_contador : contador PORT MAP(
-		 i_PC_CLR => i_CLR_n,
-		 i_CLK    => i_CLK,
-		 i_TIME   => i_TIME, 
-		 o_SINAL  => w_SINAL
+		 i_CLR => w_reset,
+		 i_CLK => i_CLK,
+		 o_contador => w_contador
 	);
 
 	
 	u_comparador : comparador PORT MAP(
-		 i_A     => w_SINAL,
-       o_SEL0  => w_o_SEL0,
-		 o_SEL1  => w_o_SEL1
+	    i_CLK       => i_CLK,
+		 i_TEMPO_MAx => i_TIME,
+       i_CONTADOR  => w_contador,
+		 o_RESET_CNT => w_reset,
+		 o_SEL       => w_i_sel
 	);
 	
 	u_mux4x1 :	mux4x1 PORT MAP(
-		 i_SEL0 => w_o_SEL0,
-		 i_SEL1 => w_o_SEL1,
+		 i_SEL  => w_i_sel,		 
 		 i_A    => i_FRAME1,
 		 i_B    => i_FRAME2,
 		 i_C    => i_FRAME3,
 		 i_D    => i_FRAME4,
-		 o_Q    => o_FRAME
+		 o_Q    => o_FRAME,
+		 o_A    => o_A,
+		 o_B    => o_B,
+		 o_C    => o_C,	
+	    o_D    => o_D	 
 	);
 
 END rtl;

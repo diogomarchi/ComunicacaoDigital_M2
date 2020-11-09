@@ -3,20 +3,28 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY comparador IS
-  PORT (	 
-       i_A     : in  std_logic_vector(1 downto 0);  -- data sinal
-       o_SEL0  : out  std_logic; -- data selector output
-       o_SEL1  : out  std_logic); -- data selector output
+  PORT (
+       i_CLK       : in std_logic;
+       i_TEMPO_MAx : in  std_logic_vector(15 downto 0);  -- valor max
+       i_CONTADOR  : in  std_logic_vector(15 downto 0);  -- valor atual
+		 o_RESET_CNT : out std_logic; 
+		 o_SEL       : out std_logic_vector(1 downto 0));  -- data selector output       
   end comparador;
 ARCHITECTURE rtl OF comparador IS
-BEGIN
-  o_SEL0 <= '0' when (i_A = "00") else
-				'1' when (i_A = "01") else
-				'0' when (i_A = "10") else
-				'1';
-  o_SEL1 <= '0' when (i_A = "00") else
-				'0' when (i_A = "01") else
-				'1' when (i_A = "10") else
-				'1';
+  
+  SIGNAL w_sel : std_logic_vector(1 DOWNTO 0) := "00";
 
+BEGIN
+
+  PROCESS (i_CLK)
+  BEGIN
+    IF (rising_edge(i_CLK)) THEN
+      IF (i_CONTADOR = (i_TEMPO_MAx - '1')) THEN           -- soma um ao atingir limite
+        w_sel <= w_sel + "1";		
+      END IF;
+    END IF;
+  END PROCESS;
+  o_RESET_CNT <= '1' WHEN (i_TEMPO_MAx = i_CONTADOR) ELSE '0';    
+  o_SEL <= w_sel;                                -- SELECTOR
+    
 END rtl;
