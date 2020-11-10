@@ -12,8 +12,7 @@ USE ieee.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY TDM_top IS
 	PORT (
-		i_CLK   : IN std_logic; -- input clock
-		i_CLR_n : IN std_logic; -- input clear/reset
+		i_CLK   : IN std_logic; -- input clock		
 		i_FRAME1 : IN std_logic_vector(15 DOWNTO 0); -- input frame1
 		i_FRAME2 : IN std_logic_vector(15 DOWNTO 0); -- input fram2
 		i_FRAME3 : IN std_logic_vector(15 DOWNTO 0); -- input frame3
