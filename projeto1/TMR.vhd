@@ -24,13 +24,13 @@ architecture arch_1 of TMR is
 begin                            
   process(i_A, i_B, i_C) is
     begin
-      for i in 0 to 15 loop
-        if(i_A(i) = i_B(i)) then
-            o_A(i)  <= i_A(i);
-        elsif(i_A(i) = i_C(i))then
-            o_A(i)  <= i_A(i);
-        else
-            o_A(i)  <= i_B(i); 
+      for i in 0 to 15 loop       -- loop para percorrer os bits
+        if(i_A(i) = i_B(i)) then  -- compara os bits do canal A e B
+            o_A(i)  <= i_A(i);    -- se for igual atribui A como saida
+        elsif(i_A(i) = i_C(i))then  -- compara os bits do canal A e C
+            o_A(i)  <= i_A(i);    -- se for igual atribui A como saida
+        else                      -- se não
+            o_A(i)  <= i_B(i);    -- atribui B como saida
         end if;
       end loop;
   end process;

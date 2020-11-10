@@ -56,7 +56,7 @@ begin
               o_D => w_o_D);
   p_CLK: process
   begin
-  	w_CLK <= '1';
+    w_CLK <= '1';
     wait for c_CLK_PERIOD/2;  
     w_CLK <= '0';
     wait for c_CLK_PERIOD/2;  
