@@ -2,36 +2,37 @@
 -- Design: mux4x1 16bits
 -- Entity: mux4x1
 -- Author: Diogo & George
--- Rev.  : 1.0
--- Date  : 11/08/2020
+-- Rev. : 1.0
+-- Date : 11/08/2020
 ------------------------------------------------
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.STD_LOGIC_UNSIGNED.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.STD_LOGIC_UNSIGNED.all;
 
-ENTITY mux4x1 IS
-       PORT (
-              i_sel : IN std_logic_Vector(1 DOWNTO 0); -- selector
-              i_A : IN std_logic_Vector(15 DOWNTO 0); -- data input
-              i_B : IN std_logic_Vector(15 DOWNTO 0); -- data input
-              i_C : IN std_logic_Vector(15 DOWNTO 0); -- data input
-              i_D : IN std_logic_Vector(15 DOWNTO 0); -- data input
-              o_Q : OUT std_logic_Vector(15 DOWNTO 0); -- data output
-				  o_A : OUT std_logic;
-				  o_B : OUT std_logic;
-				  o_C : OUT std_logic;
-				  o_D : OUT std_logic);
-END mux4x1;
+entity mux4x1 is
+  port (
+    i_sel : in std_logic_Vector(1 downto 0); -- selector
+    i_A   : in std_logic_Vector(15 downto 0); -- data input
+    i_B   : in std_logic_Vector(15 downto 0); -- data input
+    i_C   : in std_logic_Vector(15 downto 0); -- data input
+    i_D   : in std_logic_Vector(15 downto 0); -- data input
+    o_Q   : out std_logic_Vector(15 downto 0); -- data output
+    o_A   : out std_logic;
+    o_B   : out std_logic;
+    o_C   : out std_logic;
+    o_D   : out std_logic
+  );
+end mux4x1;
 
-ARCHITECTURE arch_1 OF mux4x1 IS       
-BEGIN
-  o_Q <= i_A WHEN (i_sel = "00") ELSE
-         i_B WHEN (i_sel = "01") ELSE
-         i_C WHEN (i_sel = "10") ELSE
+architecture arch_1 of mux4x1 is 
+begin
+  o_Q <= i_A when (i_sel = "00") else
+         i_B when (i_sel = "01") else
+         i_C when (i_sel = "10") else
          i_D;
-	
-  o_A <= '1' WHEN (i_sel = "00") ELSE	'0';
-  o_B <= '1' WHEN (i_sel = "01") ELSE	'0';
-  o_C <= '1' WHEN (i_sel = "10") ELSE	'0';
-  o_D <= '1' WHEN (i_sel = "11") ELSE	'0';
-END arch_1;
+ 
+  o_A <= '1' when (i_sel = "00") else '0';
+  o_B <= '1' when (i_sel = "01") else '0';
+  o_C <= '1' when (i_sel = "10") else '0';
+  o_D <= '1' when (i_sel = "11") else '0';
+end arch_1;

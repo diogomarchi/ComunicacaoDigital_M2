@@ -1,6 +1,6 @@
 ------------------------------------------------
--- Design: mux_e_demux
--- Entity: tb_mux_e_demux
+-- Design: tb_tdm
+-- Entity: TDM_tb
 -- Author: Diogo
 -- Rev.  : 1.0
 -- Date  : 03/24/2020
